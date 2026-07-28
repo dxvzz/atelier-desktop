@@ -3,16 +3,17 @@ name: Build Desktop Apps
 on:
   push:
     tags:
-      - 'v*' # Runs automatically when you push a version tag like v1.0.1
+      - 'v*'
 
 permissions:
-  contents: write # Allows GitHub to automatically upload files to Releases
+  contents: write
 
 jobs:
   release:
     runs-on: ${{ matrix.os }}
 
     strategy:
+      fail-fast: false # Prevents one OS failure from cancelling the other builds
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
 
@@ -23,7 +24,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install Dependencies
         run: npm install
