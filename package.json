@@ -1,17 +1,16 @@
 {
   "name": "atelier-desktop",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Atelier Workstation Desktop Application",
   "main": "main.js",
-  "author": "dxvzz",
+  "author": "dxvzz <contact@atelierws.app>",
   "repository": "github:dxvzz/atelier-desktop",
   "scripts": {
     "start": "electron .",
     "build": "electron-builder",
     "build:win": "electron-builder --win",
     "build:portable": "electron-builder --win portable",
-    "build:linux": "electron-builder --linux AppImage deb",
-    "build:all": "electron-builder --win --linux"
+    "build:linux": "electron-builder --linux AppImage deb"
   },
   "devDependencies": {
     "electron": "31.0.0",
@@ -42,12 +41,17 @@
       "icon": "icon.ico"
     },
     "linux": {
-  "target": [
-    "tar.gz",
-    "deb"
-  ],
-  "category": "Utility",
-  "icon": "icon.png"
+      "target": [
+        "tar.gz",
+        "deb"
+      ],
+      "category": "Utility",
+      "maintainer": "dxvzz <contact@atelierws.app>",
+      "desktop": {
+        "Name": "Atelier Workstation",
+        "Type": "Application",
+        "Categories": "Utility;Development;"
+      }
     },
     "nsis": {
       "oneClick": false,
