@@ -4,6 +4,7 @@
   "description": "Atelier Workstation Desktop Application",
   "main": "main.js",
   "author": "dxvzz",
+  "repository": "github:dxvzz/atelier-desktop",
   "scripts": {
     "start": "electron .",
     "build": "electron-builder",
